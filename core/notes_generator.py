@@ -1,7 +1,7 @@
 import os
 from utils.fireworks_helper import generate_text, stream_text
 
-NOTES_MODEL = "accounts/fireworks/models/gpt-oss-120b"
+NOTES_MODEL = "accounts/fireworks/models/qwen3p8-max"
 
 LONG_MAX_TOKENS = int(os.getenv("NOTES_MAX_TOKENS_LONG", "6500"))
 

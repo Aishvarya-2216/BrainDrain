@@ -107,9 +107,9 @@ def sidebar_ui():
     # Friendly model display by mode (no full ID)
     st.sidebar.markdown("<div class='bd-section-title'>🤖 Model</div>", unsafe_allow_html=True)
     MODELS_BY_MODE = {
-        "Solver": ("DeepSeek V4 Pro", "accounts/fireworks/models/deepseek-v4-pro"),
-        "Notes Generator": ("GPT-OSS 120B", "accounts/fireworks/models/gpt-oss-120b"),
-        "Quizzer": ("Kimi K2 6B", "accounts/fireworks/models/kimi-k2p6"),
+        "Solver": ("DeepSeek V4.1 Flash", "accounts/fireworks/models/deepseek-v4p1-flash"),
+        "Notes Generator": ("Qwen3.8 Max", "accounts/fireworks/models/qwen3p8-max"),
+        "Quizzer": ("Kimi K3", "accounts/fireworks/models/kimi-k3"),
     }
     model_name, model_id = MODELS_BY_MODE.get(mode, ("Unknown", ""))
     # Store the underlying id for potential future use

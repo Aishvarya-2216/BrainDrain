@@ -1,6 +1,6 @@
 from utils.fireworks_helper import generate_text, stream_text
 
-SOLVER_MODEL = "accounts/fireworks/models/deepseek-v4-pro"
+SOLVER_MODEL = "accounts/fireworks/models/deepseek-v4p1-flash"
 _SYSTEM = "I am BrainDrainAI — your AI study assistant. Read the user's problem or doubt and provide a helpful solution."
 
 

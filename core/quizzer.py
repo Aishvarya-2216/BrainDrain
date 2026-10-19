@@ -3,7 +3,7 @@ import re
 import random
 from utils.fireworks_helper import generate_text
 
-QUIZ_MODEL = "accounts/fireworks/models/kimi-k2p6"
+QUIZ_MODEL = "accounts/fireworks/models/kimi-k3"
 
 
 def _coerce_answer_index(ans, options, explanation: str | None = None):
@@ -144,9 +144,9 @@ def create_quiz_json(topic_or_text: str, difficulty: str = "easy", num_questions
         num_questions = 10
 
     temp_map = {"easy": 0.2, "medium": 0.4, "hard": 0.6, "god level": 0.8}
-    tok_map = {10: 1200, 20: 2000, 30: 2800, 50: 3800}
+    tok_map = {10: 3000, 20: 5000, 30: 8000, 50: 12000}
     temperature = temp_map.get(difficulty, 0.3)
-    max_toks = tok_map.get(num_questions, 1200)
+    max_toks = tok_map.get(num_questions, 3000)
 
     schema = {"quiz": [{"question": "", "options": ["", "", "", ""], "answer_index": 0, "explanation": ""}]}
     examples = _difficulty_examples(difficulty)
@@ -216,7 +216,7 @@ Topic or Text Input:
 {topic_or_text}
 """
         try:
-            raw2 = generate_text("accounts/fireworks/models/deepseek-v4-pro", strict_prompt.strip(), temperature=0.2, max_tokens=max_toks)
+            raw2 = generate_text("accounts/fireworks/models/deepseek-v4p1-flash", strict_prompt.strip(), temperature=0.2, max_tokens=max_toks)
             try:
                 parsed2 = json.loads(raw2)
             except Exception:
